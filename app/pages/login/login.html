@@ -1,11 +1,20 @@
-The nay la nhw the nao
 
-What about this ?
-
-a ha ha aha h
+<ion-content class="home" padding>
+  <h1 text-center>Welcome to ChatApp</h1>
 
 
-dfgd
-fg
-df
-gdfg
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" name="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" name="password"></ion-input>
+  </ion-item>
+
+  <button block primary (click)="pushPage('home')">LOGIN</button>
+  <button block primary (click)="pushPage('signup')">SIGN UP</button>
+
+
+</ion-content>

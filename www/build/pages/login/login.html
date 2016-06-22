@@ -1,0 +1,20 @@
+
+<ion-content class="home" padding>
+  <h1 text-center>Welcome to ChatApp</h1>
+
+
+  <ion-item>
+    <ion-label>Username</ion-label>
+    <ion-input type="text" name="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="password" name="password"></ion-input>
+  </ion-item>
+
+  <button block primary (click)="pushPage('home')">LOGIN</button>
+  <button block primary (click)="pushPage('signup')">SIGN UP</button>
+
+
+</ion-content>
