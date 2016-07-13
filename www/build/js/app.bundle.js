@@ -12,10 +12,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var ionic_native_1 = require('ionic-native');
-var home_1 = require('./pages/home/home');
+var login_1 = require('./pages/login/login');
 var MyApp = (function () {
     function MyApp(platform) {
-        this.rootPage = home_1.HomePage;
+        this.rootPage = login_1.LoginPage;
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -33,7 +33,7 @@ var MyApp = (function () {
 exports.MyApp = MyApp;
 ionic_angular_1.ionicBootstrap(MyApp);
 
-},{"./pages/home/home":3,"@angular/core":148,"ionic-angular":408,"ionic-native":432}],2:[function(require,module,exports){
+},{"./pages/login/login":3,"@angular/core":148,"ionic-angular":408,"ionic-native":432}],2:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -76,22 +76,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var ionic_angular_1 = require('ionic-angular');
 var detail_1 = require('../detail/detail');
-var HomePage = (function () {
-    function HomePage(_navController) {
+var LoginPage = (function () {
+    function LoginPage(_navController) {
         this._navController = _navController;
     }
-    HomePage.prototype.pushPage = function (buttonColor) {
+    LoginPage.prototype.pushPage = function (buttonColor) {
         this._navController.push(detail_1.DetailPage, { color: buttonColor });
     };
-    HomePage = __decorate([
+    LoginPage = __decorate([
         core_1.Component({
-            templateUrl: 'build/pages/home/home.html'
+            templateUrl: 'build/pages/login/login.html'
         }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController])
-    ], HomePage);
-    return HomePage;
+    ], LoginPage);
+    return LoginPage;
 }());
-exports.HomePage = HomePage;
+exports.LoginPage = LoginPage;
 
 },{"../detail/detail":2,"@angular/core":148,"ionic-angular":408}],4:[function(require,module,exports){
 "use strict";
