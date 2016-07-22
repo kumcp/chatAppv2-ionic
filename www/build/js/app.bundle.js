@@ -50,7 +50,9 @@ var DetailPage = (function () {
     function DetailPage(_navController, _navParams) {
         this._navController = _navController;
         this._navParams = _navParams;
-        this.color = _navParams.get('color');
+        alert(_navParams);
+        this.username = _navParams.get('username');
+        this.password = _navParams.get('password');
     }
     DetailPage = __decorate([
         core_1.Component({
@@ -79,13 +81,24 @@ var detail_1 = require('../detail/detail');
 var LoginPage = (function () {
     function LoginPage(_navController) {
         this._navController = _navController;
+        this.logintag = "";
+        this.func = setTimeout(function () { }, 1);
     }
-    LoginPage.prototype.pushPage = function (buttonColor) {
-        this._navController.push(detail_1.DetailPage, { color: buttonColor });
+    LoginPage.prototype.test = function (value) {
+        var _this = this;
+        clearTimeout(this.func);
+        this.func = setTimeout(function () {
+            _this.logintag = value;
+        }, 500);
+    };
+    LoginPage.prototype.pushPage = function (username, password) {
+        this._navController.push(detail_1.DetailPage, {
+            username: username,
+            password: password });
     };
     LoginPage = __decorate([
         core_1.Component({
-            templateUrl: 'build/pages/login/login.html'
+            templateUrl: 'build/pages/login/login.html',
         }), 
         __metadata('design:paramtypes', [ionic_angular_1.NavController])
     ], LoginPage);

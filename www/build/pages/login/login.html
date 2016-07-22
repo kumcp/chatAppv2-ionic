@@ -1,11 +1,12 @@
-<ion-navbar *navbar>
-
-</ion-navbar>
 
 <ion-content class="login" padding scroll="false">
 
 
-  <ion-list>
+
+
+    <div style="margin-top:20%;">
+
+    </div>
 
     <div class="main-icon">
         <img src="imgs/test.png" />
@@ -15,17 +16,16 @@
 
     <ion-item>
       <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" #username  (keyup)="test(username.value)" ></ion-input>
     </ion-item>
-
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" #password></ion-input>
     </ion-item>
 
-  </ion-list>
 
-  <button block primary (click)="pushPage('Primary')">Login</button>
+
+  <button block primary (click)="pushPage(username.value,password.value)">Login By {{logintag}}</button>
 
   <div class="btn-group">
     <a>Forgot Password</a><br />
