@@ -8741,5 +8741,11 @@ body {
 .login .btn-group {
   width: 100%;
   text-align: center;
-  margin-top: 30%;
+  margin-top: 25%;
+  line-height: 1.5em; }
+
+.login .message {
+  color: red;
+  width: 100%;
+  text-align: center;
   line-height: 1.5em; }

@@ -1,17 +1,21 @@
 import {Component} from "@angular/core";
-import {NavController} from 'ionic-angular';
-import {DetailPage} from '../detail/detail';
+import {NavController, NavParams, MenuController} from 'ionic-angular';
+
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
-  constructor(private _navController: NavController) {
+  username: string;
+  password: string;
 
+  constructor(private _navController: NavController, private _navParams: NavParams,private menu: MenuController) {
+    alert(_navParams);
+    this.username = _navParams.get('username');
+    this.password = _navParams.get('password');
   }
 
-  pushPage(buttonColor: string) {
-    this._navController.push(DetailPage, { color: buttonColor });
-
+  openLeftMenu(){
+    this.menu.open();
   }
 }

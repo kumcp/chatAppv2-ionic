@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController} from 'ionic-angular';
-import {DetailPage} from '../detail/detail';
+import {HomePage} from '../home/home';
 
 @Component({
   templateUrl: 'build/pages/login/login.html',
@@ -8,7 +8,8 @@ import {DetailPage} from '../detail/detail';
 })
 export class LoginPage {
 
-  logintag = "";
+  logintag: string = "";
+  message: string = "";
   constructor(private _navController: NavController) {
 
   }
@@ -21,11 +22,24 @@ export class LoginPage {
 
   }
 
+  loginWith(username,password){
+    if(username=="" && password == ""){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   pushPage(username,password) {
+    var loginSuccess = this.loginWith(username,password);
 
-    this._navController.push(DetailPage, {
-      username: username,
-      password: password});
-
+    if(loginSuccess){
+      this._navController.push(HomePage, {
+        username: username,
+        password: password
+      });
+    } else {
+      this.message="There's a problem when login";
+    }
   }
 }

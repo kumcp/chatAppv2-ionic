@@ -5,7 +5,7 @@ import {LoginPage} from './pages/login/login';
 
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+  templateUrl: 'build/app.html'
 })
 export class MyApp {
   rootPage: any = LoginPage;

@@ -24,7 +24,7 @@ var MyApp = (function () {
     }
     MyApp = __decorate([
         core_1.Component({
-            template: '<ion-nav [root]="rootPage"></ion-nav>'
+            templateUrl: 'build/app.html'
         }), 
         __metadata('design:paramtypes', [ionic_angular_1.Platform])
     ], MyApp);
@@ -46,23 +46,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var ionic_angular_1 = require('ionic-angular');
-var DetailPage = (function () {
-    function DetailPage(_navController, _navParams) {
+var HomePage = (function () {
+    function HomePage(_navController, _navParams, menu) {
         this._navController = _navController;
         this._navParams = _navParams;
+        this.menu = menu;
         alert(_navParams);
         this.username = _navParams.get('username');
         this.password = _navParams.get('password');
     }
-    DetailPage = __decorate([
+    HomePage.prototype.openLeftMenu = function () {
+        this.menu.open();
+    };
+    HomePage = __decorate([
         core_1.Component({
-            templateUrl: 'build/pages/detail/detail.html'
+            templateUrl: 'build/pages/home/home.html'
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams])
-    ], DetailPage);
-    return DetailPage;
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.MenuController])
+    ], HomePage);
+    return HomePage;
 }());
-exports.DetailPage = DetailPage;
+exports.HomePage = HomePage;
 
 },{"@angular/core":148,"ionic-angular":408}],3:[function(require,module,exports){
 "use strict";
@@ -77,11 +81,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var ionic_angular_1 = require('ionic-angular');
-var detail_1 = require('../detail/detail');
+var home_1 = require('../home/home');
 var LoginPage = (function () {
     function LoginPage(_navController) {
         this._navController = _navController;
         this.logintag = "";
+        this.message = "";
         this.func = setTimeout(function () { }, 1);
     }
     LoginPage.prototype.test = function (value) {
@@ -91,10 +96,25 @@ var LoginPage = (function () {
             _this.logintag = value;
         }, 500);
     };
+    LoginPage.prototype.loginWith = function (username, password) {
+        if (username == "" && password == "") {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
     LoginPage.prototype.pushPage = function (username, password) {
-        this._navController.push(detail_1.DetailPage, {
-            username: username,
-            password: password });
+        var loginSuccess = this.loginWith(username, password);
+        if (loginSuccess) {
+            this._navController.push(home_1.HomePage, {
+                username: username,
+                password: password
+            });
+        }
+        else {
+            this.message = "There's a problem when login";
+        }
     };
     LoginPage = __decorate([
         core_1.Component({
@@ -106,7 +126,7 @@ var LoginPage = (function () {
 }());
 exports.LoginPage = LoginPage;
 
-},{"../detail/detail":2,"@angular/core":148,"ionic-angular":408}],4:[function(require,module,exports){
+},{"../home/home":2,"@angular/core":148,"ionic-angular":408}],4:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];

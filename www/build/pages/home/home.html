@@ -1,14 +1,30 @@
-<ion-navbar *navbar>
-  <ion-title>
-    Blank Starter
-  </ion-title>
-</ion-navbar>
+<ion-menu [content]="mycontent" type="push" #leftmenu>
 
-<ion-content class="home" padding>
-  <h1 text-center>Press a button to navigate</h1>
+  <ion-content>
+    <ion-list>
+      <button>Close</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-  <button block danger (click)="pushPage('Danger')">Danger</button>
-  <button block danger (click)="pushPage('Primary')">Primary</button>
-  <button block secondary (click)="pushPage('Secondary')">Secondary</button>
 
-</ion-content>
+  <ion-content class="page" #mycontent>
+
+    <ion-navbar hideBackButton="true">
+      <button menuToggle="mycontent" (click)="openLeftMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+
+      <ion-title>
+       Search
+      </ion-title>
+
+
+    </ion-navbar>
+
+
+    <h1 text-center>Button Clicked:</h1>
+    <h2 text-center>{{username}}</h2>
+    <h2 text-center>{{password}}</h2>
+
+  </ion-content>

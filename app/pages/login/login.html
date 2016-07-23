@@ -3,7 +3,6 @@
 
 
 
-
     <div style="margin-top:20%;">
 
     </div>
@@ -12,7 +11,7 @@
         <img src="imgs/test.png" />
     </div>
 
-
+    <div class="message">{{message}} </div>
 
     <ion-item>
       <ion-label floating>Username</ion-label>
@@ -28,6 +27,7 @@
   <button block primary (click)="pushPage(username.value,password.value)">Login By {{logintag}}</button>
 
   <div class="btn-group">
+
     <a>Forgot Password</a><br />
     <a>Don't have account ? Register now</a>
   </div>
