@@ -1,30 +1,51 @@
-<ion-menu [content]="mycontent" type="push" #leftmenu>
 
-  <ion-content>
-    <ion-list>
-      <button>Close</button>
-    </ion-list>
-  </ion-content>
-</ion-menu>
 
+<ion-navbar hideBackButton="true">
+  <button menuToggle="mycontent" (click)="openLeftMenu()">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <ion-title>
+   <ion-input type="text" placeholder="Search"></ion-input>
+  </ion-title>
+
+
+</ion-navbar>
 
   <ion-content class="page" #mycontent>
 
-    <ion-navbar hideBackButton="true">
-      <button menuToggle="mycontent" (click)="openLeftMenu()">
-        <ion-icon name="menu"></ion-icon>
-      </button>
-
-      <ion-title>
-       Search
-      </ion-title>
 
 
-    </ion-navbar>
 
+    <ion-content>
 
-    <h1 text-center>Button Clicked:</h1>
-    <h2 text-center>{{username}}</h2>
-    <h2 text-center>{{password}}</h2>
+    <ion-card>
+
+      <img src="./imgs/test2.JPG"/>
+
+      <ion-card-content>
+        <h2 class="card-title">
+          Björk
+        </h2>
+        <p>
+          Björk first came to prominence as one of the lead vocalists ofthe avant pop Icelandic sextet the Sugarcubes, but when...
+        </p>
+      </ion-card-content>
+
+      <ion-item>
+        <ion-icon name='musical-notes' item-left style="color: #d03e84"></ion-icon>
+        Albums
+        <ion-badge item-right>9</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name='logo-twitter' item-left style="color: #55acee"></ion-icon>
+        Followers
+        <ion-badge item-right>260k</ion-badge>
+      </ion-item>
+
+    </ion-card>
+
+  </ion-content>
 
   </ion-content>

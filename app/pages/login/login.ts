@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
-import {NavController} from 'ionic-angular';
+import {NavController, MenuController} from 'ionic-angular';
 import {HomePage} from '../home/home';
+
 
 @Component({
   templateUrl: 'build/pages/login/login.html',
@@ -10,9 +11,10 @@ export class LoginPage {
 
   logintag: string = "";
   message: string = "";
-  constructor(private _navController: NavController) {
-
+  constructor(private _navController: NavController, private menuController: MenuController) {
+    this.menuController.enable(false, 'left');
   }
+
   func = setTimeout(function(){},1)
   test(value){
     clearTimeout(this.func);

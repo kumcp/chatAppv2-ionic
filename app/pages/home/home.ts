@@ -10,9 +10,10 @@ export class HomePage {
   password: string;
 
   constructor(private _navController: NavController, private _navParams: NavParams,private menu: MenuController) {
-    alert(_navParams);
+
     this.username = _navParams.get('username');
     this.password = _navParams.get('password');
+    this.menu.enable(true);
   }
 
   openLeftMenu(){

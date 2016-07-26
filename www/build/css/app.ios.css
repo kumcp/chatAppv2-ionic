@@ -8731,6 +8731,9 @@ body {
   font-size: 1.4rem;
   background-color: #fff; }
 
+.page::webkit-scrollbar {
+  display: none; }
+
 .login .main-icon {
   width: 60%;
   display: block;

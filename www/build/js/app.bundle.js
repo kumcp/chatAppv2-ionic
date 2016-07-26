@@ -51,9 +51,9 @@ var HomePage = (function () {
         this._navController = _navController;
         this._navParams = _navParams;
         this.menu = menu;
-        alert(_navParams);
         this.username = _navParams.get('username');
         this.password = _navParams.get('password');
+        this.menu.enable(true);
     }
     HomePage.prototype.openLeftMenu = function () {
         this.menu.open();
@@ -83,11 +83,13 @@ var core_1 = require("@angular/core");
 var ionic_angular_1 = require('ionic-angular');
 var home_1 = require('../home/home');
 var LoginPage = (function () {
-    function LoginPage(_navController) {
+    function LoginPage(_navController, menuController) {
         this._navController = _navController;
+        this.menuController = menuController;
         this.logintag = "";
         this.message = "";
         this.func = setTimeout(function () { }, 1);
+        this.menuController.enable(false, 'left');
     }
     LoginPage.prototype.test = function (value) {
         var _this = this;
@@ -120,7 +122,7 @@ var LoginPage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/login/login.html',
         }), 
-        __metadata('design:paramtypes', [ionic_angular_1.NavController])
+        __metadata('design:paramtypes', [ionic_angular_1.NavController, ionic_angular_1.MenuController])
     ], LoginPage);
     return LoginPage;
 }());
