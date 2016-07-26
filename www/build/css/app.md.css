@@ -9472,6 +9472,47 @@ body {
 .page::webkit-scrollbar {
   display: none; }
 
+.type1 .image-holder {
+  height: 80%;
+  width: 100%;
+  position: relative; }
+  .type1 .image-holder img {
+    width: 100%;
+    margin-bottom: 0; }
+  .type1 .image-holder .content {
+    padding: 1em;
+    max-height: 100px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.45); }
+    .type1 .image-holder .content * {
+      color: white; }
+
+.type2 .image-holder {
+  height: 80%;
+  width: 100%;
+  position: relative; }
+  .type2 .image-holder img {
+    width: 100%;
+    margin-bottom: 0; }
+  .type2 .image-holder .content {
+    padding: 1em;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.45); }
+    .type2 .image-holder .content * {
+      color: white;
+      text-align: center;
+      position: relative; }
+    .type2 .image-holder .content ion-card-title {
+      top: 20%; }
+    .type2 .image-holder .content .card-subtitle {
+      top: 15%; }
+
 .login .main-icon {
   width: 60%;
   display: block;

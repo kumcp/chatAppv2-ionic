@@ -1,3 +1,62 @@
 .page::webkit-scrollbar {
   display:none;
 }
+
+.type1{
+  .image-holder{
+    height:80%;
+    width: 100%;
+    position:relative;
+    img{
+      width: 100%;
+      margin-bottom: 0;
+
+    }
+    .content{
+      padding: 1em;
+      max-height: 100px;
+      width: 100%;
+      bottom:0;
+      left:0;
+      position: absolute;
+      background-color: rgba(0,0,0,0.45);
+      *{
+        color:white;
+      }
+    }
+  }
+}
+
+
+.type2{
+  .image-holder{
+    height:80%;
+    width: 100%;
+    position:relative;
+    img{
+      width: 100%;
+      margin-bottom: 0;
+
+    }
+    .content{
+
+      padding: 1em;
+      height: 100%;
+      width: 100%;
+      bottom: 0;
+      position: absolute;
+      background-color: rgba(0,0,0,0.45);
+      *{
+        color:white;
+        text-align: center;
+        position:relative;
+      }
+      ion-card-title{
+        top: 20%;
+      }
+      .card-subtitle{
+        top: 15%;
+      }
+    }
+  }
+}
