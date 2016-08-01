@@ -1,5 +1,32 @@
 import {Component} from "@angular/core";
-import {NavController, NavParams, MenuController} from 'ionic-angular';
+import {NavController, Popover, NavParams, MenuController} from 'ionic-angular';
+import {PopoverGroup} from '../../menus/popoverGroup';
+
+// @Component({
+//   template: `<ion-list class="popover-page">
+//
+//     <ion-item class="text-times-new-roman">
+//       <ion-label>Times New Roman</ion-label>
+//       <ion-radio value="Times New Roman"></ion-radio>
+//     </ion-item>
+//   </ion-list>`,
+// })
+// class PopoverGroup{
+//
+//   contentId: any;
+//
+//   constructor(private navParams: NavParams) {
+//
+//   }
+//
+//   ngOnInit() {
+//     if (this.navParams.data) {
+//       this.contentId = this.navParams.data.contentId;
+//     }
+//   }
+//
+//
+// }
 
 
 @Component({
@@ -24,5 +51,15 @@ export class HomePage {
 
   enableSearch(){
     this.searchBarShow=!this.searchBarShow;
+  }
+
+  presentPopover(ev){
+    let popover = Popover.create(PopoverGroup,{
+      contentId: 1,
+    });
+
+    this._navController.present(popover, {
+      ev: ev
+    });
   }
 }

@@ -19,7 +19,7 @@
   <ion-content class="page" #mycontent>
 
 
-    <ion-card class="type1">
+    <!-- <ion-card class="type1">
 
       <div class="image-holder">
 
@@ -53,9 +53,6 @@
 
 
 
-
-
-
     <ion-card class="type2">
 
       <div class="image-holder">
@@ -74,8 +71,86 @@
         </div>
       </div>
 
+    </ion-card> -->
 
+
+
+    <ion-card class="type3">
+
+      <div class="image-holder">
+
+        <img src="./imgs/test3.jpg" />
+      </div>
+
+      <div class="content">
+        <div class="title">
+          <h4>ABC</h4>
+        </div>
+        <h3 class="card-subtitle">
+        Hello everybody
+
+        </h3>
+
+      </div>
+
+      <ion-row no-padding>
+        <ion-col>
+          <button clear small danger>
+            <ion-icon name='star'></ion-icon>
+            Favorite
+          </button>
+        </ion-col>
+
+
+        <ion-col text-right>
+          <button clear dark (click)="presentPopover($event)">
+            <ion-icon name='more'></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
 
     </ion-card>
+
+
+
+
+    <ion-card class="type3">
+
+      <div class="image-holder">
+
+        <img src="./imgs/test3.jpg" />
+      </div>
+
+
+
+      <div class="content">
+        <div class="title">
+          ABC
+        </div>
+        <h3 class="card-subtitle">
+        Hello everybody
+
+        </h3>
+
+      </div>
+
+      <ion-row no-padding>
+        <ion-col>
+          <button clear small danger>
+            <ion-icon name='star'></ion-icon>
+            Favorite
+          </button>
+        </ion-col>
+
+
+        <ion-col text-right>
+          <button clear dark>
+            <ion-icon name='more'></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+
 
   </ion-content>

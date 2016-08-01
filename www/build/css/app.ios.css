@@ -8775,6 +8775,36 @@ body {
     .type2 .image-holder .content .card-subtitle {
       top: 15%; }
 
+.type3 {
+  float: left;
+  margin-top: 2.5em; }
+  .type3 .image-holder {
+    width: 5.5em;
+    max-width: 33%;
+    height: 5.5em;
+    overflow: hidden;
+    position: absolute;
+    margin-top: -2em;
+    margin-left: 1em;
+    box-shadow: 1px 1px 15px;
+    -moz-box-shadow: 1px 1px 15px;
+    -webkit-box-shadow: 2px 5px 15px -2px #999999;
+    -o-box-shadow: 1px 1px 15px;
+    -ms-box-shadow: 1px 1px 15px; }
+    .type3 .image-holder img {
+      width: auto;
+      height: 100%;
+      max-width: 200%;
+      max-height: 100%; }
+  .type3 .content {
+    margin-left: 8em;
+    width: 60%; }
+    .type3 .content .title {
+      font-size: 22px;
+      padding-top: .4em; }
+    .type3 .content .card-subtitle {
+      font-size: 12px; }
+
 .login .main-icon {
   width: 60%;
   display: block;
