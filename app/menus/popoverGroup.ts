@@ -10,7 +10,7 @@ export class PopoverGroup{
   contentId: any;
 
   constructor(private navParams: NavParams) {
-
+//
   }
 
   ngOnInit() {
