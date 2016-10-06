@@ -67,8 +67,7 @@ export class HomePage {
   presentPopover(ev,id){
     let popover = Popover.create(PopoverGroup,{
       contentId: id,
-    });
-
+    }); 
     this._navController.present(popover, {
       ev: ev
     });
