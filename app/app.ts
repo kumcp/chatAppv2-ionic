@@ -12,7 +12,7 @@ import {HomePage} from './pages/home/home';
 })
 export class MyApp {
   // rootPage: any = LoginPage;
-rootPage: any = HomePage;
+  rootPage: any = HomePage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

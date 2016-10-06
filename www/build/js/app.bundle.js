@@ -117,6 +117,16 @@ var HomePage = (function () {
         this.password = _navParams.get('password');
         this.menu.enable(true);
         this.searchBarShow = false;
+        this.fakeData = [
+            { imageLink: "./imgs/test3.jpg",
+                title: "ABC",
+                description: "Hello everyone"
+            },
+            { imageLink: "/imgs/test3.jpg",
+                title: "CDE",
+                description: "Hello you"
+            }
+        ];
     }
     HomePage.prototype.openLeftMenu = function () {
         this.menu.open();
@@ -124,9 +134,9 @@ var HomePage = (function () {
     HomePage.prototype.enableSearch = function () {
         this.searchBarShow = !this.searchBarShow;
     };
-    HomePage.prototype.presentPopover = function (ev) {
+    HomePage.prototype.presentPopover = function (ev, id) {
         var popover = ionic_angular_1.Popover.create(popoverGroup_1.PopoverGroup, {
-            contentId: 1,
+            contentId: id,
         });
         this._navController.present(popover, {
             ev: ev

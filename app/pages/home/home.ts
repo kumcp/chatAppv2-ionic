@@ -36,6 +36,7 @@ export class HomePage {
   username: string;
   password: string;
   searchBarShow: boolean=false;
+  fakeData: any;
 
   constructor(private _navController: NavController, private _navParams: NavParams,private menu: MenuController) {
 
@@ -43,6 +44,16 @@ export class HomePage {
     this.password = _navParams.get('password');
     this.menu.enable(true);
     this.searchBarShow=false;
+    this.fakeData = [
+      { imageLink: "./imgs/test3.jpg",
+        title: "ABC",
+        description: "Hello everyone"
+      },
+      { imageLink: "/imgs/test3.jpg",
+        title: "CDE",
+        description: "Hello you"
+      }
+    ]
   }
 
   openLeftMenu(){
@@ -53,9 +64,9 @@ export class HomePage {
     this.searchBarShow=!this.searchBarShow;
   }
 
-  presentPopover(ev){
+  presentPopover(ev,id){
     let popover = Popover.create(PopoverGroup,{
-      contentId: 1,
+      contentId: id,
     });
 
     this._navController.present(popover, {

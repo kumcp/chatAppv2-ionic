@@ -103,7 +103,7 @@
 
 
         <ion-col text-right>
-          <button clear dark (click)="presentPopover($event)">
+          <button clear dark (click)="presentPopover($event,1)">
             <ion-icon name='more'></ion-icon>
           </button>
         </ion-col>
@@ -117,7 +117,6 @@
     <ion-card class="type3">
 
       <div class="image-holder">
-s
         <img src="./imgs/test3.jpg" />
       </div>
 
@@ -144,7 +143,7 @@ s
 
 
         <ion-col text-right>
-          <button clear dark>
+          <button clear dark (click)="presentPopover($event,2)">
             <ion-icon name='more'></ion-icon>
           </button>
         </ion-col>
