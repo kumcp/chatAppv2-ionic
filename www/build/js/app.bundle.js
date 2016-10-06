@@ -51,6 +51,7 @@ var ionic_angular_1 = require('ionic-angular');
 var PopoverGroup = (function () {
     function PopoverGroup(navParams) {
         this.navParams = navParams;
+        //
     }
     PopoverGroup.prototype.ngOnInit = function () {
         if (this.navParams.data) {
